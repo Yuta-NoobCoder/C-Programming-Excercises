@@ -1,53 +1,33 @@
-#include <stdio.h>
+#include<stdio.h>
  
-int max3(int x, int y, int z);
-int max33(int x, int y, int z);
+int gcd(int, int);
+int lcm(int, int);
  
-int main(void) {
-    int num1, num2, num3;
-    int group;
-    int i;
-    int max;
- 
-    printf("関数max33による3つの整数の組の最大値の計算\n");
-    printf("組数を入力してください\n");
-    printf("組数:");
-    scanf("%d", &group);
-    for (i = 1; i <= group; i++) {
-        printf("%d組\n", i);
-        printf("1:");
-        scanf("%d", &num1);
-        printf("2:");
-        scanf("%d", &num2);
-        printf("3:");
-        scanf("%d", &num3);
-        max = max33(num1, num2, num3);
+int main(void){
+    int a,b, gcd_num, lcm_num;
+    while(1){   
+    printf("a:");
+    scanf("%d",&a);
+    if(a > 0 || a > 1000000000) break;
     }
- 
-    printf("%d組の整数の最大値は%dです\n", group, max);
- 
-    return 0;
+    while(1){   
+    printf("b:");
+    scanf("%d",&b);
+    if(b > 0 || b > 1000000000) break;
+    }
+    gcd_num = gcd(a,b);
+    lcm_num = lcm(a,b);
+    printf("aとbの最大公約数：%d\n",gcd_num);
+    printf("aとbの最小公倍数：%d\n",lcm_num);
 }
  
-int max3(int x, int y, int z) {
-    int max = x;
-    if(max < y) max = y;
-    if(max < z) max = z;
-    return max;
+int gcd(int a, int b){
+    if( a % b == 0) return b;
+    else{
+        return gcd(b, a % b);
+    }
 }
  
-int max33(int x, int y, int z) {
-    static int max; /* 最大値を保持するstatic変数 */
-    static int count = 0; /* 関数max33が初めて呼ばれたかどうか判定するstatic変数 */
-    int tmp;
-    if (count == 0) { /* 関数が初めて呼ばれたときの処理 */
-     max = max3(x,y,z);
-     count = 1;
-    } else { /* 関数が2回目以降に呼ばれたときの処理 */
-    if(max < x) max = x;
-    if(max < y) max = y;
-    if(max < z) max = z;
-    }
- 
-    return max;
+int lcm(int a, int b){
+    return a * b / gcd(a,b);
 }
