@@ -26,18 +26,18 @@ int main(void){
     for(i=0; i< SIZE; i++){
             //小さい場合
             if(search > array[i]) {
-            array_less[num_less] = array[i];
-            num_less++;
+                array_less[num_less] = array[i];
+                num_less++;
             } 
             //大きい場合
             if (search < array[i]) {
-            array_more[num_more] = array[i];
-            num_more++;
+                array_more[num_more] = array[i];
+                num_more++;
             }
             //等しい場合
             if (search == array[i]){
-            array_equals[num_equals] = array[i];
-            num_equals++;
+                array_equals[num_equals] = array[i];
+                num_equals++;
             }
     }
 
