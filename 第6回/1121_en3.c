@@ -6,7 +6,7 @@ int main(void){
     int i;
     int sum = 0;
     int max, min, max_i, min_i;
-    int array[SIZE] = {5,4,3,2,1};
+    int array[SIZE];
 
     for(i=0; i<SIZE; i++){
         if(i == 0){
@@ -34,8 +34,7 @@ int main(void){
     printf("データ一覧:\n");
 
     for(i=0; i<SIZE; i++){
-        if (i < 9) printf("[No. %d] %d\n", i + 1, array[i]);
-        else printf("[No.%d] %d\n", i + 1, array[i]);
+         printf("[No.%2d] %d\n", i + 1, array[i]);
     }
     printf("\n");
     printf("平均値 = %.2f\n", (double)sum / SIZE);
