@@ -7,8 +7,8 @@ int main(void){
     
     char name[NUM_STUDENTS][NUM_CHAR]; //名前
     char pref[NUM_STUDENTS][NUM_CHAR]; //出身都道府県
-    char isSearch[NUM_CHAR];
-    char serach_str[NUM_CHAR];
+    char isSearch[NUM_CHAR]; //検索の有無
+    char serach_str[NUM_CHAR]; //検索文字列
     int cnt = 0;
 
     for(int i=0; i<NUM_STUDENTS; i++){
