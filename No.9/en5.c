@@ -19,26 +19,27 @@ int main(void){
         scanf("%s",pref[i]);
         printf("\n");
     }
-        printf("検索しますか？（yes or no）:");
-        scanf("%s",isSearch);
-        while(isSearch[0] == 'y'){
-            printf("検索する都道府県名を入力して下さい:");
-            scanf("%s", serach_str);
-            printf("\n<検索結果>\n");
-            //該当する県名のデータを検索
-            for(int i=0; i<NUM_STUDENTS; i++){
-                if(strcmp(pref[i],serach_str) == 0) {
-                    printf("[No.%d]  %s  %s\n", i+1, pref[i], name[i]);
-                    cnt ++;
-                }
-            }
-            //該当者なし
-            if(cnt == 0) printf("該当者なし\n");
-            cnt = 0;
 
-            printf("\n検索しますか？（yes or no）:");
-            scanf("%s",isSearch);
+    printf("検索しますか？（yes or no）:");
+    scanf("%s",isSearch);
+    while(isSearch[0] == 'y'){
+        printf("検索する都道府県名を入力して下さい:");
+        scanf("%s", serach_str);
+        printf("\n<検索結果>\n");
+       //該当する県名のデータを検索
+        for(int i=0; i<NUM_STUDENTS; i++){
+            if(strcmp(pref[i],serach_str) == 0) {
+                printf("[No.%d]  %s  %s\n", i+1, pref[i], name[i]);
+                cnt ++;
+            }
         }
+        //該当者なし
+        if(cnt == 0) printf("該当者なし\n");
+        cnt = 0;
+
+        printf("\n検索しますか？（yes or no）:");
+        scanf("%s",isSearch);
+    }
     printf("終了\n");
     return 0;
 }
